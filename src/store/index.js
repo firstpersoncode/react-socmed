@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 
-import posts from './reducers/posts'
+import post from './reducers/post'
 
 const reducer = combineReducers({
-  posts: posts.reducer
+  post: post.reducer
 })
 
 export default configureStore({ reducer })
