@@ -1,14 +1,15 @@
-import { Switch, Route } from "react-router"
+import { Box } from "@material-ui/core"
 
 import Routes from "./routes"
-
+import Navigation from "./components/Navigation"
 
 export default function App() {
 
   return (
-    <div id="app">
+    <Box id="app" p={5} pt={10}>
+      <Navigation />
       <h1>React Socmed</h1>
       <Routes />
-    </div>
+    </Box>
   )
 }
