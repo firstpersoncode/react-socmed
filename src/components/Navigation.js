@@ -15,9 +15,9 @@ export default function Navigation() {
       <Tabs value={value} onChange={handleChange}
         scrollButtons="auto"
         centered>
-        <Tab label="Feed" icon={<Home />} component={Link} to="/" />
-        <Tab label="Post" icon={<AddBox />} />
-        <Tab label="User" icon={<Person />} component={Link} to="/user/1" />
+        <Tab icon={<Home />} component={Link} to="/" />
+        <Tab icon={<AddBox />} />
+        <Tab icon={<Person />} component={Link} to="/user/1" />
       </Tabs>
     </AppBar>
   )
