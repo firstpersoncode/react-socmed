@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
+import { Box } from "@material-ui/core"
 
 import { getPosts } from "../../store/reducers/post/actions"
 
@@ -14,7 +15,7 @@ export default function Feed() {
   }, [])
 
   return (
-    <div id="feed">
+    <Box id="feed" px={5}>
       {
         data.length
           ? (
@@ -33,6 +34,6 @@ export default function Feed() {
       }
       { loading ? <p>Loading posts ... </p> : null }
       { error ? <p>Something went wrong !</p> : null }
-    </div>
+    </Box>
   )
 }
