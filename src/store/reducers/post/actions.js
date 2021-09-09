@@ -1,6 +1,6 @@
 import slice from "."
 
-const { setData, setComments, setOwner, setLoading, setError } = slice.actions
+const { setData, setComments, addComment, deleteComment, updateData, setOwner, setLoading, setError } = slice.actions
 
 export const fetchComments = (id) => async dispatch => {
   try {
@@ -55,4 +55,16 @@ export const getPost = (id) => async dispatch => {
     console.error(err)
     throw err
   }
+}
+
+export const actionAddComment = (comment) => dispatch => {
+  dispatch(addComment(comment))
+}
+
+export const actionDeleteComment = (commentId) => dispatch => {
+  dispatch(deleteComment(commentId))
+}
+
+export const updatePost = (post) => dispatch => {
+  dispatch(updateData(post))
 }

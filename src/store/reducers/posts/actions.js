@@ -1,6 +1,6 @@
 import slice from "."
 
-const { setData, setLoading, setError } = slice.actions
+const { setData, addData, deleteData, setLoading, setError } = slice.actions
 
 export const getPosts = () => async dispatch => {
   try {
@@ -21,4 +21,12 @@ export const getPosts = () => async dispatch => {
     console.error(err)
     throw err
   }
+}
+
+export const addPost = (post) => dispatch => {
+  dispatch(addData(post))
+}
+
+export const deletePost = (id) => dispatch => {
+  dispatch(deleteData(id))
 }
