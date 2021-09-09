@@ -18,6 +18,7 @@ export const getPosts = () => async dispatch => {
   } catch (err) {
     dispatch(setLoading(false))
     dispatch(setError(true))
-    return console.error(err)
+    console.error(err)
+    throw err
   }
 }

@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router"
+import { Switch, Route } from "react-router-dom"
 
 import Feed from "./Feed"
 import Post from "./Post"
