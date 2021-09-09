@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { Box, AppBar, Tabs, Tab, Divider, ImageList, ImageListItem, Button } from "@material-ui/core"
 import { Toc, Apps } from "@material-ui/icons"
 import { makeStyles } from '@material-ui/core/styles';
@@ -65,9 +66,11 @@ export default function UserSection({ posts, albums }) {
                   {
                     posts.map((p, i) => (
                       <li key={i}>
-                        <h5>{p.title}</h5>
-                        <p>{p.body}</p>
-                        <Divider />
+                        <Link to={`/post/${p.id}`}>
+                          <h5>{p.title}</h5>
+                          <p>{p.body}</p>
+                          <Divider />
+                        </Link>
                       </li>
                     ))
                   }
