@@ -1,23 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const slice = createSlice({
-  name: 'user',
+  name: 'users',
   initialState: {
-    data: {},
-    comments: [],
-    owner: {},
+    data: [],
     loading: false,
     error: false
   },
   reducers: {
     setData: (state, action) => {
       state.data = action.payload
-    },
-    setComments: (state, action) => {
-      state.comments = action.payload
-    },
-    setOwner: (state, action) => {
-      state.owner = action.payload
     },
     setLoading: (state, action) => {
       state.loading = action.payload

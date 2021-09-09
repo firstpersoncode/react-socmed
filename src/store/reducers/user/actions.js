@@ -46,8 +46,8 @@ export const getUser = (id) => async dispatch => {
       throw res
     }
 
-    const posts = await res.json()
-    dispatch(setData(posts))
+    const user = await res.json()
+    dispatch(setData(user))
     dispatch(setLoading(false))
   } catch (err) {
     dispatch(setLoading(false))
