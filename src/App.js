@@ -1,45 +1,14 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from 'react-redux'
+import { Switch, Route } from "react-router"
 
-import { getPosts } from "./store/reducers/post/actions"
+import Routes from "./routes"
 
-function App() {
-  const dispatch = useDispatch()
-  const { data, loading, error } = useSelector(state => state.post)
 
-  useEffect(() => {
-    dispatch(getPosts())
-  }, [])
+export default function App() {
 
   return (
-    <div className="App">
+    <div id="app">
       <h1>React Socmed</h1>
-      {
-        data.length
-          ? (
-            <ul>
-              {
-                data.map((p, i) => (
-                  <li key={i}>
-                    <h3>{p.title}</h3>
-                    <p>{p.body}</p>
-                  </li>
-                ))
-              }
-            </ul>
-          )
-          : null
-      }
-
-      {
-        loading ? <p>Loading posts ... </p> : null
-      }
-
-      {
-        error ? <p>Something went wrong !</p> : null
-      }
+      <Routes />
     </div>
   )
 }
-
-export default App
