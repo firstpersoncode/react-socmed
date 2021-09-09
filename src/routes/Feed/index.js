@@ -8,7 +8,9 @@ export default function Feed() {
   const { data, loading, error } = useSelector(state => state.post)
 
   useEffect(() => {
-    dispatch(getPosts())
+    if (!data.length) {
+      dispatch(getPosts())
+    }
   }, [])
 
   return (
