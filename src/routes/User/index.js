@@ -33,18 +33,24 @@ export default function User() {
 
   return (
     <Box id="user">
-      <Box display="flex" flexWrap="wrap" flexDirection="column" justifyContent="center" alignItems="center" px={5}>
-        <Avatar src="/user-placeholder.jpg" className={classes.avatar} />
-        <h3>@{data.username}</h3>
-        <h4>{data.name}</h4>
-        <Box display="flex" justifyContent="center" alignItems="center" className={classes.contact}>
-          {data.email ? <Chip clickable color="primary" icon={<Mail />} label={data.email} component="a" href={"mailto:" + data.email} /> : null}
-          {data.phone ? <Chip clickable color="primary" icon={<Phone />} label={data.phone} component="a" href={"tel:" + data.phone} /> : null}
-          {data.website ? <Chip clickable color="primary" icon={<Language />} label={data.website} component="a" href={"https://" + data.website} /> : null}
-        </Box>
-      </Box>
+      {
+        !loading
+          ? (
+            <Box display="flex" flexWrap="wrap" flexDirection="column" justifyContent="center" alignItems="center" px={5}>
+              <Avatar src="/user-placeholder.jpg" className={classes.avatar} />
+              <h3>@{data.username}</h3>
+              <h4>{data.name}</h4>
+              <Box display="flex" justifyContent="center" alignItems="center" className={classes.contact}>
+                {data.email ? <Chip clickable color="primary" icon={<Mail />} label={data.email} component="a" href={"mailto:" + data.email} /> : null}
+                {data.phone ? <Chip clickable color="primary" icon={<Phone />} label={data.phone} component="a" href={"tel:" + data.phone} /> : null}
+                {data.website ? <Chip clickable color="primary" icon={<Language />} label={data.website} component="a" href={"https://" + data.website} /> : null}
+              </Box>
+            </Box>
+          )
+          : <Box px={5}>Loading ...</Box>
+      }
 
-      <UserSection posts={posts} albums={albums} />
+      {!loading ? <UserSection posts={posts} albums={albums} /> : null}
     </Box>
   )
 }
