@@ -6,9 +6,8 @@ import Navigation from "./components/Navigation"
 export default function App() {
 
   return (
-    <Box id="app" p={5} pt={10}>
+    <Box id="app" pt={10}>
       <Navigation />
-      <h1>React Socmed</h1>
       <Routes />
     </Box>
   )
